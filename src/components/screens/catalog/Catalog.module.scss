@@ -1,0 +1,130 @@
+@import '/src/assets/styles/_variables.scss';
+
+.main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	background-image: url(/catalog-bg.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	> .wrapperInner {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 20px;
+
+		position: relative;
+
+		width: 100%;
+		max-width: 80%;
+
+		border-radius: 30px;
+
+		padding: 74px 0 74px;
+
+		overflow: hidden;
+
+		&:before {
+			content: '';
+			display: block;
+			width: 100%;
+			height: 100%;
+
+			opacity: 0.75;
+
+			position: absolute;
+			left: 0;
+			top: 0;
+
+			background-color: $white;
+		}
+
+		> .head {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 20px;
+
+			width: 100%;
+			max-width: 90%;
+			text-align: center;
+
+			z-index: 1;
+
+			> .headline {
+				color: $dark-accent;
+				font-size: 16px;
+				font-weight: 800;
+				line-height: 100%;
+				text-transform: uppercase;
+			}
+
+			> h1 {
+				color: $black;
+				font-size: 45px;
+				font-weight: 800;
+				line-height: 100%;
+
+				> span {
+					color: $accent;
+				}
+			}
+		}
+
+		> .filters {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			gap: 20px;
+
+			margin-top: 20px;
+			> div > div {
+				background-color: #7d9dff;
+				color: #fff !important;
+
+				input,
+				input::placeholder,
+				> div > div {
+					color: #fff !important;
+				}
+			}
+		}
+
+		> .catalog {
+			width: 100%;
+			max-width: 90%;
+
+			min-height: 200px;
+		}
+	}
+
+	.empty {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		height: 100%;
+
+		color: $black;
+		font-size: 45px;
+		font-weight: 800;
+		line-height: 100%;
+	}
+}
+
+.preloadBlock {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	height: 100vh;
+}

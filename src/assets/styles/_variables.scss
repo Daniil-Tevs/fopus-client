@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+$accent: #0033cc;
+
+$white: #ffffff;
+$dark-white: #f9f9f9;
+$black: #000000;
+$light-black: lighten($black, 50%);
+$hard-light-black: lighten($black, 80%);
+
+$dark-accent: darken($accent, 10%);
+$hard-dark-accent: darken($accent, 20%);
+
+$light-accent: lighten($accent, 30%);
+$hard-light-accent: lighten($accent, 50%);
+
+$purple: #8000ff;
+$light-purple: #b4bbff;
+
+$light-orange: #ffd78c;
+
+$red: rgb(255, 0, 0);
+
+$green: #038300;
+$light-green: #daffed;
+
+$bx-accent: 0 4px 4px rgba($accent, 0.25);
+$bx-16: 0 3px 6px rgba(0, 0, 0, 0.16);
+
+$default-font: 'Manrope', sans-serif;
+
+$transition: all 0.4s ease-in-out;
+
+$modal-radius: 15px;
+$card-radius: 15px;
+
+$mobile: 768px;
+
+$container: (
+	width: 100%,
+	max-width: 90%,
+	margin: 0 auto
+);
+
+@mixin applyStyles($styles) {
+	@each $property, $value in $styles {
+		#{$property}: $value;
+	}
+}

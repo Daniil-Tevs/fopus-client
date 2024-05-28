@@ -1,0 +1,42 @@
+@import '/src/assets/styles/_variables.scss';
+
+footer {
+	background: $light-purple;
+	z-index: 10;
+	> .inner {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+
+		padding: 20px 0;
+
+		@include applyStyles($container);
+
+		> img {
+			cursor: pointer;
+		}
+
+		> .left {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+
+			gap: 10px;
+
+			> p {
+				color: $light-orange;
+				font-size: 16px;
+				font-weight: 400px;
+			}
+		}
+
+		.helpLink {
+			color: $light-orange;
+			font-size: 16px;
+			font-weight: 600px;
+			text-decoration: none;
+		}
+	}
+}

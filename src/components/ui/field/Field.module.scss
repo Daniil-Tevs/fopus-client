@@ -1,0 +1,35 @@
+@import 'src/assets/styles/variables';
+
+.input {
+	width: 100%;
+
+	> input {
+		background: none;
+		border: 1px solid rgba($accent, 0.3);
+		color: $black;
+		font-size: 16px;
+		padding: 10px;
+		border-radius: 10px;
+		outline: none;
+		width: 100%;
+
+		&:focus {
+			border-color: rgba($accent, 0.5);
+		}
+
+		&::placeholder {
+			color: $light-black;
+		}
+	}
+
+	.error {
+		color: $red;
+		font-size: 10px;
+		font-weight: 500;
+		line-height: 100%;
+		margin: 1px 0 0 14px;
+		text-align: left;
+
+		position: absolute;
+	}
+}

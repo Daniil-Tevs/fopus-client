@@ -1,0 +1,17 @@
+@import '/src/assets/styles/_variables.scss';
+
+.prevArrow {
+	> svg {
+		fill: $accent;
+		width: 20px;
+		height: 40px;
+
+		&:hover {
+			fill: $light-accent;
+		}
+	}
+
+	&::before {
+		content: '';
+	}
+}

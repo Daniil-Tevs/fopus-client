@@ -1,0 +1,201 @@
+@import '/src/assets/styles/_variables.scss';
+
+.order {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 17px;
+
+	width: 30%;
+	box-sizing: border-box;
+	padding: 23px 17px;
+
+	box-shadow: $bx-16;
+	border-radius: $card-radius;
+
+	> .info {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		gap: 30px;
+
+		width: 100%;
+
+		.title {
+			font-size: 20px;
+			font-weight: 800;
+			color: $black;
+
+			margin-bottom: 10px;
+		}
+
+		ul,
+		li {
+			list-style-type: none;
+		}
+
+		li {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			gap: 10px;
+		}
+
+		li > p {
+			color: $black;
+			font-size: 14px;
+			font-weight: 600;
+		}
+
+		li > span {
+			color: $black;
+			font-size: 14px;
+			font-weight: 400;
+
+			&.bold {
+				font-size: 16px;
+				font-weight: 800;
+			}
+		}
+
+		> div:first-of-type {
+			flex: 1;
+		}
+
+		img {
+			width: 82px;
+			height: 82px;
+		}
+	}
+
+	> hr {
+		width: 100%;
+		height: 2px;
+		background-color: $hard-light-black;
+		border: none;
+	}
+
+	> .photo,
+	> .client {
+		width: 100%;
+		ul,
+		li {
+			list-style-type: none;
+		}
+
+		li {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			gap: 10px;
+		}
+
+		li > p {
+			color: $black;
+			font-size: 14px;
+			font-weight: 600;
+		}
+
+		li > span {
+			color: $black;
+			font-size: 14px;
+			font-weight: 400;
+
+			&.bold {
+				font-size: 16px;
+				font-weight: 800;
+			}
+		}
+
+		li > span > a {
+			color: $black;
+			font-size: 14px;
+			font-weight: 400;
+			text-decoration: none;
+
+			transition: $transition;
+
+			&:hover {
+				color: $purple;
+			}
+		}
+	}
+
+	> .control {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		gap: 30px;
+
+		width: 100%;
+
+		> .price {
+			font-size: 20px;
+			font-weight: 800;
+			color: $black;
+		}
+
+		> .sellerPanel {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			gap: 5px;
+
+			> div {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: $purple !important;
+				font-weight: 600;
+				gap: 10px;
+				cursor: pointer;
+
+				transition: $transition;
+			}
+		}
+
+		> .sellerName {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			gap: 10px;
+			max-width: 50%;
+
+			> img {
+				width: 20px;
+				height: 20px;
+			}
+
+			> p {
+				color: $black;
+				font-size: 12px;
+				font-weight: 800;
+				line-height: 16px;
+			}
+		}
+	}
+}
+
+.status-0 {
+	background-color: rgb(255 148 148 / 53%);
+}
+
+.status-6 {
+	background-color: $light-green;
+}
+
+.green {
+	color: $green !important;
+}
+
+.purple {
+	color: $purple !important;
+}
+.red {
+	color: $red !important;
+}

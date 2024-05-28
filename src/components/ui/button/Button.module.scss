@@ -1,0 +1,54 @@
+@import '/src/assets/styles/_variables.scss';
+
+.button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 100%;
+
+	border-radius: 10px;
+
+	cursor: pointer;
+
+	transition: $transition;
+
+	&.main {
+		color: $white;
+		background: $accent;
+		border: 2px solid $accent;
+
+		&:hover {
+			color: $accent;
+			background: $white;
+		}
+	}
+
+	&.white {
+		color: $accent;
+		background: $white;
+		border: 2px solid $accent;
+
+		&:hover {
+			color: $white;
+			background: $accent;
+		}
+	}
+
+	&.xs {
+		width: 160px;
+		padding: 10px 0;
+	}
+
+	&.xl {
+		width: 260px;
+		padding: 19px 0;
+	}
+
+	&.autoWight {
+		width: 100%;
+		padding: 19px 0;
+	}
+}
