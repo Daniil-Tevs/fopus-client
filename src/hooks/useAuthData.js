@@ -6,7 +6,11 @@ import { useNavigate } from 'react-router-dom'
 
 import { useAuth } from './useAuth'
 
-export const useAuthData = ({ type = 'login', roleId = null }) => {
+export const useAuthData = ({
+	type = 'login',
+	roleId = null,
+	handlerErrorForm
+}) => {
 	const {
 		register,
 		handleSubmit,
@@ -34,6 +38,7 @@ export const useAuthData = ({ type = 'login', roleId = null }) => {
 		},
 		onError: e => {
 			console.log(e)
+			handlerErrorForm(e.message)
 		}
 	})
 

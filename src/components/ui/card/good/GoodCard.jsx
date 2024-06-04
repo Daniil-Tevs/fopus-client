@@ -1,7 +1,3 @@
-import goodImage from '/public/good.svg'
-import deleteIcon from '/public/icons/delete.svg'
-import editIcon from '/public/icons/edit.svg'
-import sellerIcon from '/public/icons/seller.svg'
 import cn from 'clsx'
 
 import FormGoodDelete from '/src/components/ui/form/good/delete/FormGoodDelete'
@@ -38,7 +34,7 @@ const GoodCard = ({
 					</ul>
 				</div>
 				<div>
-					<img src={goodImage} alt='Фото товара' />
+					<img src='/public/good.svg' alt='Фото товара' />
 				</div>
 			</div>
 			<hr />
@@ -59,7 +55,7 @@ const GoodCard = ({
 									)
 								}}
 							>
-								<img src={editIcon} alt='edit' />
+								<img src='/public/icons/edit.svg' alt='edit' />
 							</div>
 							<div
 								onClick={() => {
@@ -72,14 +68,14 @@ const GoodCard = ({
 									)
 								}}
 							>
-								<img src={deleteIcon} alt='delete' />
+								<img src='/public/icons/delete.svg' alt='delete' />
 							</div>
 						</div>
 					</>
 				) : (
 					<>
 						<div className={styles.sellerName}>
-							<img src={sellerIcon} alt='seller' />
+							<img src='/public/icons/seller.svg' alt='seller' />
 							<p>
 								{data.people.SURNAME} {data.people.NAME}{' '}
 								{data.people.PARENT_NAME}

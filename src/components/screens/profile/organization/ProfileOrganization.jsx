@@ -2,6 +2,7 @@ import cn from 'clsx'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
+import Loader from '/src/components/ui/Loader'
 import Button from '/src/components/ui/button/Button.jsx'
 import GoodCard from '/src/components/ui/card/good/GoodCard'
 import OrderCard from '/src/components/ui/card/order/OrderCard'
@@ -23,9 +24,12 @@ const ProfileOrganization = () => {
 		useProfile()
 
 	if (isLoading) {
-		return <div>Загрузка...</div>
+		return (
+			<div className={styles.preloadBlock}>
+				<Loader />
+			</div>
+		)
 	}
-
 	return (
 		<Layout seoKey='profile'>
 			<Modal active={active} setActivity={setActivity}>

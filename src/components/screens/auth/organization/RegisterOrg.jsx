@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
+import Loader from '/src/components/ui/Loader'
 import Button from '/src/components/ui/button/Button'
 import Field from '/src/components/ui/field/Field'
 
@@ -10,10 +12,21 @@ import Layout from '/src/components/layout/Layout'
 import styles from './RegisterOrg.module.scss'
 
 const RegisterUser = () => {
+	const [textErrorForm, handlerErrorForm] = useState('')
+
 	const { errors, handleSubmit, isLoading, onSubmit, register } = useAuthData({
 		type: 'register',
-		roleId: 2
+		roleId: 2,
+		handlerErrorForm
 	})
+
+	if (isLoading) {
+		return (
+			<div className={styles.preloadBlock}>
+				<Loader />
+			</div>
+		)
+	}
 
 	return (
 		<Layout seoKey='register'>
@@ -75,6 +88,7 @@ const RegisterUser = () => {
 								placeholder='Пароль*'
 							/>
 							<Button size='autoWight'>Зарегистрироваться</Button>
+							<div className={styles.formError}>{textErrorForm}</div>
 						</form>
 
 						<div className={styles.additional}>

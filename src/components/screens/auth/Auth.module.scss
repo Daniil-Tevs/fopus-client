@@ -88,4 +88,22 @@
 			}
 		}
 	}
+
+	.formError {
+		color: $red;
+		font-size: 14px;
+		font-weight: 600;
+
+		margin-top: -20px;
+		width: 100%;
+	}
+}
+
+.preloadBlock {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	height: 100vh;
 }

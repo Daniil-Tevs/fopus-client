@@ -1,6 +1,7 @@
 import cn from 'clsx'
 import { Link } from 'react-router-dom'
 
+import Loader from '/src/components/ui/Loader'
 import OrderCard from '/src/components/ui/card/order/OrderCard'
 import Empty from '/src/components/ui/empty/Empty'
 
@@ -14,7 +15,11 @@ const ProfileUser = ({ user }) => {
 	const { data, isLoading } = useProfileUser()
 
 	if (isLoading) {
-		return <div>Загрузка...</div>
+		return (
+			<div className={styles.preloadBlock}>
+				<Loader />
+			</div>
+		)
 	}
 
 	const orders = data
