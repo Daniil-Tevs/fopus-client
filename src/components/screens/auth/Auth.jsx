@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
+import Loader from '/src/components/ui/Loader'
 import Button from '/src/components/ui/button/Button'
 import Field from '/src/components/ui/field/Field'
 
@@ -10,9 +12,19 @@ import Layout from '/src/components/layout/Layout'
 import styles from './Auth.module.scss'
 
 const Auth = () => {
-	const { errors, handleSubmit, isLoading, onSubmit, register } = useAuthData(
-		{}
-	)
+	const [textErrorForm, handlerErrorForm] = useState('')
+
+	const { errors, handleSubmit, isLoading, onSubmit, register } = useAuthData({
+		handlerErrorForm
+	})
+
+	if (isLoading) {
+		return (
+			<div className={styles.preloadBlock}>
+				<Loader />
+			</div>
+		)
+	}
 
 	return (
 		<Layout seoKey='auth'>
@@ -44,6 +56,7 @@ const Auth = () => {
 								placeholder='Пароль'
 							/>
 							<Button size='autoWight'>Войти</Button>
+							<div className={styles.formError}>{textErrorForm}</div>
 						</form>
 
 						<div className={styles.additional}>

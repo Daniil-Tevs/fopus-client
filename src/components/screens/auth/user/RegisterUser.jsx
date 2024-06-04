@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
+import Loader from '/src/components/ui/Loader'
 import Button from '/src/components/ui/button/Button'
 import Field from '/src/components/ui/field/Field'
 
@@ -10,10 +12,21 @@ import Layout from '/src/components/layout/Layout'
 import styles from './RegisterUser.module.scss'
 
 const RegisterUser = () => {
+	const [textErrorForm, handlerErrorForm] = useState('')
+
 	const { errors, handleSubmit, isLoading, onSubmit, register } = useAuthData({
 		type: 'register',
-		roleId: 3
+		roleId: 3,
+		handlerErrorForm
 	})
+
+	if (isLoading) {
+		return (
+			<div className={styles.preloadBlock}>
+				<Loader />
+			</div>
+		)
+	}
 
 	return (
 		<Layout seoKey='register'>
@@ -31,7 +44,8 @@ const RegisterUser = () => {
 								name='surname'
 								register={register}
 								options={{
-									required: 'Введите вашу фамилию'
+									required: 'Введите вашу фамилию',
+									pattern: /^[A-Za-z]+$/i
 								}}
 								type='text'
 								placeholder='Фамилия*'
@@ -41,7 +55,8 @@ const RegisterUser = () => {
 								name='name'
 								register={register}
 								options={{
-									required: 'Введите ваше имя'
+									required: 'Введите ваше имя',
+									pattern: /^[A-Za-z]+$/i
 								}}
 								type='text'
 								placeholder='Имя*'
@@ -68,12 +83,14 @@ const RegisterUser = () => {
 								name='password'
 								register={register}
 								options={{
-									required: 'Введите пароль'
+									required: 'Введите пароль',
+									minLength: 4
 								}}
 								type='password'
 								placeholder='Пароль*'
 							/>
 							<Button size='autoWight'>Зарегистрироваться</Button>
+							<div className={styles.formError}>{textErrorForm}</div>
 						</form>
 
 						<div className={styles.additional}>
