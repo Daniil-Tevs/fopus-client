@@ -34,7 +34,7 @@ const GoodCard = ({
 					</ul>
 				</div>
 				<div>
-					<img src='/public/good.svg' alt='Фото товара' />
+					<img src='/good.svg' alt='Фото товара' />
 				</div>
 			</div>
 			<hr />
@@ -55,7 +55,7 @@ const GoodCard = ({
 									)
 								}}
 							>
-								<img src='/public/icons/edit.svg' alt='edit' />
+								<img src='/icons/edit.svg' alt='edit' />
 							</div>
 							<div
 								onClick={() => {
@@ -68,14 +68,14 @@ const GoodCard = ({
 									)
 								}}
 							>
-								<img src='/public/icons/delete.svg' alt='delete' />
+								<img src='/icons/delete.svg' alt='delete' />
 							</div>
 						</div>
 					</>
 				) : (
 					<>
 						<div className={styles.sellerName}>
-							<img src='/public/icons/seller.svg' alt='seller' />
+							<img src='/icons/seller.svg' alt='seller' />
 							<p>
 								{data.people.SURNAME} {data.people.NAME}{' '}
 								{data.people.PARENT_NAME}

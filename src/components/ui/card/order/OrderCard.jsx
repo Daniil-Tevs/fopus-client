@@ -7,7 +7,7 @@ import styles from './OrderCard.module.scss'
 
 const OrderCard = ({ type, data, user }) => {
 	const queryClient = useQueryClient()
-	data.orderImagePath = `/public/order-status/${data.order_status.ID}.svg`
+	data.orderImagePath = `/order-status/${data.order_status.ID}.svg`
 	return (
 		<>
 			<div
@@ -114,7 +114,7 @@ const OrderCard = ({ type, data, user }) => {
 													queryClient.invalidateQueries(['profile'])
 												}}
 											>
-												<img src='/public/icons/yes.svg' alt='Next' />
+												<img src='/icons/yes.svg' alt='Next' />
 											</div>
 											<div
 												onClick={() => {
@@ -122,7 +122,7 @@ const OrderCard = ({ type, data, user }) => {
 													queryClient.invalidateQueries(['profile'])
 												}}
 											>
-												<img src='/public/icons/no.svg' alt='No' />
+												<img src='/icons/no.svg' alt='No' />
 											</div>
 										</>
 									) : (
@@ -140,7 +140,7 @@ const OrderCard = ({ type, data, user }) => {
 												}}
 											>
 												<p>Далее</p>
-												<img src='/public/icons/yes.svg' alt='Next' />
+												<img src='/icons/yes.svg' alt='Next' />
 											</div>
 										</>
 									) : (
@@ -172,7 +172,7 @@ const OrderCard = ({ type, data, user }) => {
 								}}
 							>
 								<p className={styles.red}>Отменить</p>
-								<img src='/public/icons/no.svg' alt='No' />
+								<img src='/icons/no.svg' alt='No' />
 							</div>
 						</div>
 					) : (
