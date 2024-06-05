@@ -1,0 +1,107 @@
+@import '/src/assets/styles/_variables.scss';
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: $dark-white;
+
+	flex: 1;
+
+	> .wrapperInner {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		position: relative;
+
+		width: 100%;
+		max-width: 60%;
+
+		overflow: hidden;
+
+		> div {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 25px;
+
+			width: 100%;
+			max-width: 90%;
+
+			text-align: center;
+
+			z-index: 1;
+
+			> .headline {
+				color: $dark-accent;
+				font-size: 15px;
+				font-weight: 600;
+				text-transform: uppercase;
+			}
+
+			> h1 {
+				color: $black;
+				font-size: 45px;
+				font-weight: 600;
+				line-height: 100%;
+
+				> span {
+					color: $accent;
+				}
+			}
+
+			> form {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 30px;
+
+				width: 100%;
+				max-width: 360px;
+
+				margin-top: 20px;
+
+				> button {
+					margin-top: 10px;
+				}
+
+				.select {
+					width: 100%;
+					text-align: left;
+				}
+
+				> div > input {
+					background-color: $white;
+				}
+			}
+		}
+	}
+
+	.successText {
+		color: $green;
+		font-size: 20px;
+		font-weight: 600;
+	}
+
+	.formError {
+		color: $red;
+		font-size: 14px;
+		font-weight: 600;
+
+		margin-top: -20px;
+		width: 100%;
+	}
+}
+
+.preloadBlock {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	height: 100vh;
+}

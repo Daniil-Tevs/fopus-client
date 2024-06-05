@@ -2,7 +2,7 @@ import logo from '/icons/logo.svg'
 import { TOKEN } from '/src/app.constants'
 import Cookies from 'js-cookie'
 import { MdLogout } from 'react-icons/md'
-import { VscAccount } from 'react-icons/vsc'
+import { VscAccount, VscFeedback } from 'react-icons/vsc'
 import { Link } from 'react-router-dom'
 
 import Button from '/src/components/ui/button/Button'
@@ -24,13 +24,20 @@ const Header = () => {
 
 				<div className={styles.nav}>
 					{isAuth ? (
-						<MdLogout
-							onClick={() => {
-								Cookies.remove(TOKEN)
-								Cookies.remove('role')
-								document.location = '/auth'
-							}}
-						/>
+						<>
+							<MdLogout
+								onClick={() => {
+									Cookies.remove(TOKEN)
+									Cookies.remove('role')
+									document.location = '/auth'
+								}}
+							/>
+							<VscFeedback
+								onClick={() => {
+									document.location = '/feedback'
+								}}
+							/>
+						</>
 					) : (
 						''
 					)}
